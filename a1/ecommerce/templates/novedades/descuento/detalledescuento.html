@@ -1,0 +1,106 @@
+{% extends 'detalle.html' %}
+{% load static %}
+
+{% block contenido %}
+    <table class=" table table-bordered  shadow-lg p-3 mb-5  rounded">
+        <thead>
+            <tr class="text-center bg-secondary">
+              <th colspan="2" style="width: 50%;">EMPRESA
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+                  <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+                </svg></th>
+              <th colspan="2" style="width: 50%;" >EMPLEADO/A
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2">
+                <div class="row ">
+                    <div class="col"><h6>Nombre:</h6></div>
+                    <div class="col"><p>Celumania</p></div>
+                </div>
+                <div class="row">
+                    <div class="col"><h6>Direccion:</h6></div>
+                    <div class="col"><p>Mall del Sol</p></div>
+                </div>
+                <div class="row">
+                    <div class="col"><h6>Ruc:</h6></div>
+                    <div class="col"><p>000000</p></div>
+                </div>
+              </td>
+              <td>
+                <div class="row">
+                    <div class="col"><h6>Nombre:</h6></div>
+                    <div class="col"><p>Brigner</p></div>
+                </div>
+                <div class="row">
+                    <div class="col"><h6>Cedula:</h6></div>
+                    <div class="col"><p>0960285305</p></div>
+                </div>
+                <div class="row">
+                    <div class="col"><h6>Correo:</h6></div>
+                    <div class="col"><p>bcarrielr@unemi.edu.ec</p></div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          <thead>
+            <tr class="text-center bg-secondary">
+              <th colspan="4" style="width: 50%;" >DETALLES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4">
+                <div class="container">
+                    <br>
+                    <div class="row">
+                      <div class="col text-center">
+                          <h6>Fecha:</h6>
+                      </div>
+                      <div class="col text-center">
+                          <p>22 julio 2022</p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col text-center">
+                          <h6>Motivo:</h6>
+                      </div>
+                      <div class="col text-center">
+                          <p>Compra de un telefono</p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col text-center">
+                          <h6>Cuotas:</h6>
+                      </div>
+                      <div class="col text-center">
+                          <p>2/10</p>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col text-center">
+                          <h6>Valor Cuota:</h6>
+                      </div>
+                      <div class="col text-center">
+                          <p>$ 40</p>   
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col text-center">
+                        <h6>Estado:</h6>
+                    </div>
+                    <div class="col text-center">
+                        <p>Activo</p>   
+                    </div>
+                </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+{% endblock %}

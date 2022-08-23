@@ -1,0 +1,119 @@
+{% extends 'consulta.html' %}
+{% load static %}
+
+{% block columns %}
+    <tr class="text-center">
+        <th scope="col" style="width: 5%;">Nro</th>
+        <th scope="col" style="width: 20%;">Solicitante</th>
+        <th scope="col" style="width: 10%;">Motivo</th>
+        <th scope="col" style="width: 10%;">Monto Total</th>
+        <th scope="col" style="width: 10%;">Saldo Insoluto</th>
+        <th scope="col" style="width: 10%;">Estado</th>
+        <th scope="col" style="width: 10%;">Acción</th>
+    </tr>
+{% endblock %}
+
+{% block rows %}
+  <tr class="text-center">
+      <td>1</td>
+      <td>Brigner Carriel</td>
+      <td>Personal</td>
+      <td>10.000</td>
+      <td>9.911</td>
+      <td>Activo</td>
+      <td>
+        <a class="text-decoration-none" href="{% url 'editarprestamo' %}">✏️</a>
+        <a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#Eliminar" href="#">❌</a>
+        <a class="text-decoration-none" href="{% url 'detalleprestamo' %}"><img height="20px" src="{% static 'img/cards/detalle-prestamos.png' %}"></a>
+      </td>
+  </tr>
+    <tr class="text-center">
+      <td>2</td>
+      <td>Erlyn Naranjo</td>
+      <td>Salud</td>
+      <td>1.000</td>
+      <td>901</td>
+        <td>Activo</td>
+        <td>
+          <a class="text-decoration-none" href="{% url 'editarprestamo' %}">✏️</a>
+          <a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#Eliminar" href="#">❌</a>
+          <a class="text-decoration-none" href="{% url 'detalleprestamo' %}"><img height="20px" src="{% static 'img/cards/detalle-prestamos.png' %}"></a>
+        </td>
+  </tr>
+    <tr class="text-center">
+      <td>3</td>
+      <td>Dayanna Aspiazu</td>
+      <td>Salud</td>
+      <td>12.000</td>
+      <td>11.911</td>
+        <td>Inactivo</td>
+      <td>
+        <a class="text-decoration-none" href="{% url 'editarprestamo' %}">✏️</a>
+        <a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#Eliminar" href="#">❌</a>
+        <a class="text-decoration-none" href="{% url 'detalleprestamo' %}"><img height="20px" src="{% static 'img/cards/detalle-prestamos.png' %}"></a>
+      </td>
+  </tr>
+  <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="detalle" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="detalleLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalleLabel">Detalle de su Préstamo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Eliminar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="EliminarLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EliminarLabel">Eliminar Prestamo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Desea Eliminar su prestamo?</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="eliminadoboton" >Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Alert -->
+<div id="alertaeliminado"></div>
+<script>
+  const alertPlaceholder = document.getElementById('alertaeliminado')
+
+  const alert = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+
+    alertPlaceholder.append(wrapper)
+  }
+
+  const alertTrigger = document.getElementById('eliminadoboton')
+  if (alertTrigger) {
+    alertTrigger.addEventListener('click', () => {
+      alert('Se eliminó el Préstamo Exitosamente!', 'success')
+    })
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'formempresa.html' %}
+{% load static %}
+
+{% block controls %}
+<form class="row g-3 needs-validation shadow-lg p-3 mb-5 bg-body rounded" novalidate>
+
+  <div class="col-md-4">
+      <label for="razon" class = "form-label"><h6>Razón Social</h6></label>
+      <input id="razon"type="text" name="razon" class="form-control" required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="ruc" class = "form-label"><h6>Ruc</h6></label>
+    <input id="ruc" type="text" name="ruc" class="form-control" required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="dirM" class = "form-label"><h6>Dirección Matriz</h6></label>
+    <input id="dirM" name="dirM" type="text"  class="form-control" required>
+  </div>
+  <div class="col-md-4">
+    <label for="cuota" class = "form-label"><h6>Dirección Sucursal</h6></label>
+    <input id="cuota" name="cuota" type="text"   class="form-control" required>
+  </div>
+  <div class="col-md-4">
+    <label for="telefono" class = "form-label"><h6>Teléfono</h6></label>
+    <input id="telefono" class="form-control" type="text"  aria-label="Disabled input example" required>
+  </div>
+</form>
+    
+
+{% endblock %}

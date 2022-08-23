@@ -1,0 +1,53 @@
+{% extends 'formdescuento.html' %}
+{% load static %}
+
+{% block controls %}
+<form class="row g-3 needs-validation shadow-lg p-3 mb-5 bg-body rounded" novalidate>
+  <div class="col-md-4 ">
+      <label for="solicitud"><h6>Deudor ?</h6></label>
+        <select name="solicitud" id="solicitud" class="form-select" required>
+          <option selected disabled value="">Deudor....</option>
+          <option>Dayana Apiazu</option>
+          <option>Brigner Carriel</option>
+          <option>Kelly Sánchez</option>
+          <option>Stuard Naranjo</option>
+        </select>
+    </div>
+    <div class="col-md-4 ">
+      <label for="empresa"><h6>Empresa</h6></label>
+        <select name="empresa" id="empresa" class="form-select" required>
+          <option selected disabled value="">Razón Social ...</option>
+          <option>Artefacta</option>
+          <option>Celumania</option>
+          <option>Créditos Económicos</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label for="solicitud"><h6>Motivo</h6></label>
+        <input id="fecha"type="text" name="fecha" class="form-control" required>
+    </div>
+
+  <div class="col-md-4">
+    <label for="fecha" class = "form-label"><h6>Fecha de Emisión</h6></label>
+    <input id="fecha"type="date" name="fecha" class="form-control" required>
+  </div>
+  
+  <div class="col-md-4">
+    <label for="monto" class = "form-label"><h6>Monto</h6></label>
+    <input id="monto" name="monto" type="number" max="15000" min="500"  class="form-control" required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="cuota" class = "form-label"><h6>Cuotas</h6></label>
+    <input id="cuota" name="cuotas" type="number" max="72" min="3"  class="form-control" required>
+  </div>
+
+  <div class="col-md-4">
+    <h6>Estado</h6>
+      <div class="form-check mt-2 ">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+           <label class="form-check-label" for="flexRadioDefault4">Activo</label>
+      </div>
+   </div>
+</form>
+{% endblock %}
